@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RamblinRecs</string>
+    <string name="search_hint">course name (e.g. cs1332)</string>
+</resources>
