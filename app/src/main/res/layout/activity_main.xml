@@ -7,19 +7,95 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--search bar-->
     <EditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:autofillHints="@string/search_hint"
         android:hint="@string/search_hint"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar"
+        android:paddingTop="55dp"
+        android:paddingBottom="15dp"
+        >
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="top|center"
+            >
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text="@string/cs1301"
+                />
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text="@string/cs1331"
+                />
+            <Button
+                android:id="@+id/btn3"
+                android:layout_height="190dp"
+                android:layout_width="190dp"
+                android:text="@string/cs1332"
+                />
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text="@string/cs2110"
+                />
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text=""
+                />
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text=""
+                />
+            <Button
+                android:id="@+id/btn7"
+                android:layout_height="190dp"
+                android:layout_width="190dp"
+                android:text=""
+                />
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:text=""
+                />
+        </GridLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
