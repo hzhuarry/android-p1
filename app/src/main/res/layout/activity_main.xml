@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        android:paddingTop="55dp"
+        android:paddingTop="70dp"
         android:paddingBottom="15dp"
         >
 
@@ -45,30 +45,103 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_gravity="top|center"
             >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card0"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/gold"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="50dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:paddingTop="60dp"
+                        android:textAlignment="center"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="@color/tint"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1.5"
+                        android:shadowDy="1.3"
+                        android:shadowRadius="1.6"
+                        android:text="@string/CS1100"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="@color/tint"
+                        android:textAlignment="center"
+                        android:text="@string/des1100"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="190dp"
-                android:layout_height="190dp"
-                android:text="@string/cs1301"
-                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="185dp"
+                android:layout_height="185dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/navy"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="50dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:paddingTop="60dp"
+                    android:textAlignment="center"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/gold"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.3"
+                    android:shadowRadius="1.6"
+                    android:text="@string/CS1301"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/gold"
+                    android:textAlignment="center"
+                    android:text="@string/des1301"
+                    />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <Button
                 android:id="@+id/btn2"
                 android:layout_width="190dp"
                 android:layout_height="190dp"
-                android:text="@string/cs1331"
+                android:text="@string/CS1331"
                 />
             <Button
                 android:id="@+id/btn3"
                 android:layout_height="190dp"
                 android:layout_width="190dp"
-                android:text="@string/cs1332"
+                android:text="@string/CS1332"
                 />
             <Button
                 android:id="@+id/btn4"
                 android:layout_width="190dp"
                 android:layout_height="190dp"
-                android:text="@string/cs2110"
+                android:text="@string/CS2110"
                 />
             <Button
                 android:id="@+id/btn5"
