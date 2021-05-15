@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".cs1100_activity"
+        <activity android:name=".second_activity"
             android:label="@string/CS1100"
             android:parentActivityName=".MainActivity"
             >
