@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.OnC
     private List<String> mCourseTitles;
     private List<String> courseTitles;
 
-    private List<String> mCourseDescriptions;
-    private List<String> courseDescriptions;
+    private List<String> mCourseNames;
+    private List<String> courseNames;
 
-    private List<List<String>> mPreReqs, mPostReqs;
-    private List<List<String>> preReqs, postReqs;
+    private List<List<String>> mPreReqs;
+    private List<List<String>> preReqs;
 
     private List<Integer> mCreditList;
     private List<Integer> creditList;
@@ -50,28 +50,26 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.OnC
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 courseTitles = new ArrayList<>();
-                courseDescriptions = new ArrayList<>();
+                courseNames = new ArrayList<>();
                 creditList = new ArrayList<>();
                 preReqs = new ArrayList<>();
-                postReqs = new ArrayList<>();
 
                 String input = charSequence.toString().toLowerCase();
                 for (int j = 0; j < mCourseTitles.size(); ++j) {
                     String item = mCourseTitles.get(j).toLowerCase();
                     if (item.contains(input)) {
                         courseTitles.add(mCourseTitles.get(j));
-                        courseDescriptions.add(mCourseDescriptions.get(j));
+                        courseNames.add(mCourseNames.get(j));
                         creditList.add(mCreditList.get(j));
                         preReqs.add(mPreReqs.get(j));
-                        postReqs.add(mPostReqs.get(j));
                     }
                 }
                 CustomAdapter newDisplay;
                 if (input.length() != 0) {
-                    newDisplay = new CustomAdapter(courseTitles, courseDescriptions, MainActivity.this);
+                    newDisplay = new CustomAdapter(courseTitles, courseNames, MainActivity.this);
                 }
                 else {
-                    newDisplay = new CustomAdapter(mCourseTitles, mCourseDescriptions, MainActivity.this);
+                    newDisplay = new CustomAdapter(mCourseTitles, mCourseNames, MainActivity.this);
                 }
                 recyclerView.setAdapter(newDisplay);
             }
@@ -82,62 +80,71 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.OnC
 
         //init master
         mCourseTitles = new ArrayList<>();
-        mCourseDescriptions = new ArrayList<>();
+        mCourseNames = new ArrayList<>();
         mCreditList = new ArrayList<>();
         mPreReqs = new ArrayList<>();
-        mPostReqs = new ArrayList<>();
 
         //init copy
         courseTitles = new ArrayList<>();
-        courseDescriptions = new ArrayList<>();
+        courseNames = new ArrayList<>();
         creditList = new ArrayList<>();
         preReqs = new ArrayList<>();
-        postReqs = new ArrayList<>();
 
         //insert elements to master
         mCourseTitles.add("CS1100");
-        mCourseDescriptions.add("Freshman Leap Seminar");
+        mCourseNames.add("Freshman Leap Seminar");
         mCreditList.add(1);
         mPreReqs.add(new ArrayList<String>());
         mPreReqs.get(0).add("No Prerequisite courses");
-        mPostReqs.add(new ArrayList<String>());
-        mPostReqs.get(0).add("No Post Recommended Courses");
 
         mCourseTitles.add("CS1301");
-        mCourseDescriptions.add("Introduction to Computing");
+        mCourseNames.add("Introduction to Computing");
         mCreditList.add(3);
         mPreReqs.add(new ArrayList<String>());
         mPreReqs.get(1).add("No Prerequisite courses");
-        mPostReqs.add(new ArrayList<String>());
-        mPostReqs.get(1).add("CS1331");
 
         mCourseTitles.add("CS1331");
-        mCourseDescriptions.add("Introduction to Object Oriented Programming");
+        mCourseNames.add("Introduction to Object Oriented Programming");
         mCreditList.add(3);
         mPreReqs.add(new ArrayList<String>());
         mPreReqs.get(2).add("CS1301");
-        mPostReqs.add(new ArrayList<String>());
-        mPostReqs.get(2).add("CS1332");
 
         mCourseTitles.add("CS1332");
-        mCourseDescriptions.add("Datacourses Structures and Algorithms for Applications");
+        mCourseNames.add("Datacourses Structures and Algorithms for Applications");
         mCreditList.add(3);
         mPreReqs.add(new ArrayList<String>());
         mPreReqs.get(3).add("CS1331");
-        mPostReqs.add(new ArrayList<String>());
-        mPostReqs.get(3).add("CS2110");
+
+        mCourseTitles.add("CS2050");
+        mCourseNames.add("Introduction to Discrete Mathematics for Computer Science");
+        mCreditList.add(3);
+        mPreReqs.add(new ArrayList<String>());
+        mPreReqs.get(4).add("No Prerequisite courses");
+
+        mCourseTitles.add("CS2110");
+        mCourseNames.add("Computer Organization and Programming");
+        mCreditList.add(4);
+        mPreReqs.add(new ArrayList<String>());
+        mPreReqs.get(5).add("CS1332");
+
+        mCourseTitles.add("CS2340");
+        mCourseNames.add("Objects and Design");
+        mCreditList.add(4);
+        mPreReqs.add(new ArrayList<String>());
+        //to be added
+        mPreReqs.get(6).add("");
+
 
         //transfer to copy
         courseTitles.addAll(mCourseTitles);
-        courseDescriptions.addAll(mCourseDescriptions);
+        courseNames.addAll(mCourseNames);
         creditList.addAll(mCreditList);
         preReqs.addAll(mPreReqs);
-        postReqs.addAll(mPostReqs);
 
 
         recyclerView = findViewById(R.id.recycler_view);
 
-        customAdapter = new CustomAdapter(courseTitles, courseDescriptions, this);
+        customAdapter = new CustomAdapter(courseTitles, courseNames, this);
         recyclerView.setAdapter(customAdapter);
 
         gridLayoutManager = new GridLayoutManager(this, 2);
@@ -146,13 +153,12 @@ public class MainActivity extends AppCompatActivity implements CustomAdapter.OnC
 
     @Override
     public void onCardClick(int position) {
-        Log.d(TAG, "Position: " + position + ", Course Name : " + courseTitles.get(position) + ", Course Description: " + courseDescriptions.get(position));
+//        Log.d(TAG, "Position: " + position + ", Course Name : " + courseTitles.get(position) + ", Course Description: " + courseNames.get(position));
         Bundle bundle = new Bundle();
-        bundle.putString("course_name", courseTitles.get(position));
-        bundle.putString("course_descript", courseDescriptions.get(position));
+        bundle.putString("course_title", courseTitles.get(position));
+        bundle.putString("course_name", courseNames.get(position));
         bundle.putInt("credit", creditList.get(position));
-        bundle.putStringArrayList("prereq list", (ArrayList<String>) preReqs.get(position));
-        bundle.putStringArrayList("postreq list", (ArrayList<String>) postReqs.get(position));
+        bundle.putStringArrayList("prereq_list", (ArrayList<String>) preReqs.get(position));
 
 
         Intent intent = new Intent(this, second_activity.class);

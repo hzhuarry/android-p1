@@ -24,11 +24,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/descript"
+        app:layout_constraintBottom_toTopOf="@id/name"
         />
 
     <TextView
-        android:id="@+id/descript"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/des1100"
@@ -47,31 +47,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descript"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Description: "
+                android:text="@string/description_bold"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 />
             <TextView
-                android:id="@+id/paragraph"
+                android:id="@+id/descript_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insert Description Here"
+                android:text="@string/insert_description_here"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 />
@@ -81,11 +82,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="50dp"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Credit Hours: "
+                android:text="@string/credit_hours_bold"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="15sp"
@@ -94,7 +96,7 @@
                 android:id="@+id/credit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insert Credits Here"
+                android:text="@string/insert_credits_here"
                 android:textSize="15sp"
                 android:textColor="@color/black"
                 />
@@ -104,47 +106,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="50dp"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prerequisite Courses: "
+                android:text="@string/prerequisite_courses_bold"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="15sp"
                 />
             <TextView
-                android:id="@+id/prereq_insert"
+                android:id="@+id/prereq_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insert Prerequisites Here"
+                android:text="@string/insert_prerequisites_here"
                 android:textSize="15sp"
                 android:textColor="@color/black"
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recommended Post Courses: "
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                />
-            <TextView
-                android:id="@+id/postreq_insert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Insert Post-Courses Here"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                />
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

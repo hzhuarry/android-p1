@@ -15,13 +15,13 @@ import java.util.List;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private List<String> courseTitles;
-    private List<String> courseDescription;
+    private List<String> courseNames;
     private OnCardListener mOnCardListener;
 
     public CustomAdapter(List<String> courseTitles, List<String> courseDescription, OnCardListener mOnCardListener) {
 
         this.courseTitles = courseTitles;
-        this.courseDescription = courseDescription;
+        this.courseNames = courseDescription;
         this.mOnCardListener = mOnCardListener;
     }
 
@@ -37,7 +37,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
         holder.textView1.setText(courseTitles.get(position));
-        holder.textView2.setText(courseDescription.get(position));
+        holder.textView2.setText(courseNames.get(position));
         //alternating pattern
         if ((position - 1) % 4 == 0 || (position - 2) % 4 == 0) {
                 holder.cardView.setCardBackgroundColor(Color.parseColor("#093558"));

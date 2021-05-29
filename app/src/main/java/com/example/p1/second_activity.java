@@ -10,17 +10,15 @@ import java.util.List;
 public class second_activity extends AppCompatActivity {
 
     private Bundle bundle;
+    private String courseTitle;
     private String courseName;
-    private String courseDescription;
     private int creditAmoount;
     private List<String> preReqList;
-    private List<String> postReqList;
 
+    private TextView mCourseTitle;
     private TextView mCourseName;
-    private TextView mCourseDescription;
     private TextView mCreditAmount;
     private TextView mPreReqList;
-    private TextView mPostReqList;
 
 
     @Override
@@ -30,21 +28,19 @@ public class second_activity extends AppCompatActivity {
 
         bundle = getIntent().getExtras();
         if (bundle != null) {
+            courseTitle = bundle.getString("course_title");
             courseName = bundle.getString("course_name");
-            courseDescription = bundle.getString("course_descript");
             creditAmoount = bundle.getInt("credit");
-            preReqList = bundle.getStringArrayList("prereq list");
-            postReqList = bundle.getStringArrayList("postreq list");
+            preReqList = bundle.getStringArrayList("prereq_list");
         }
 
-        mCourseName = findViewById(R.id.title);
-        mCourseDescription = findViewById(R.id.descript);
+        mCourseTitle= findViewById(R.id.title);
+        mCourseName= findViewById(R.id.name);
         mCreditAmount = findViewById(R.id.credit_text);
-        mPreReqList = findViewById(R.id.prereq_insert);
-        mPostReqList = findViewById(R.id.postreq_insert);
+        mPreReqList = findViewById(R.id.prereq_text);
 
+        mCourseTitle.setText(courseTitle);
         mCourseName.setText(courseName);
-        mCourseDescription.setText(courseDescription);
         mCreditAmount.setText(creditAmoount + "");
         String ss1 = "";
         for (int i = 0; i < preReqList.size(); ++i) {
@@ -54,13 +50,5 @@ public class second_activity extends AppCompatActivity {
             }
         }
         mPreReqList.setText(ss1);
-        String ss2 = "";
-        for (int i = 0; i < postReqList.size(); ++i) {
-            ss2 += postReqList.get(i);
-            if (i + 1 < postReqList.size()) {
-                ss2 += ", ";
-            }
-        }
-        mPostReqList.setText(ss2);
     }
 }
