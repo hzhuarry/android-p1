@@ -8,12 +8,10 @@
     <string name="des1301">Introduction to Computing</string>
     <string name="CS1100">CS1100</string>
     <string name="des1100">Freshman Leap Seminar</string>
-    <string name="description_bold">Description:</string>
+    <string name="description_bold">Description: </string>
     <string name="insert_description_here">Insert Description Here</string>
-    <string name="credit_hours_bold">Credit Hours:</string>
+    <string name="credit_hours_bold">Credit Hours: </string>
     <string name="insert_credits_here">Insert Credits Here</string>
-    <string name="prerequisite_courses_bold">Prerequisite Courses:</string>
+    <string name="prerequisite_courses_bold">Prerequisite Courses: </string>
     <string name="insert_prerequisites_here">Insert Prerequisites Here</string>
-    <string name="recommended_post_courses_bold">Recommended Post Courses:</string>
-    <string name="insert_post_courses_here">Insert Post-Courses Here</string>
 </resources>
