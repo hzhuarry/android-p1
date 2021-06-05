@@ -51,7 +51,7 @@ public class second_activity extends AppCompatActivity {
         for (int i = 0; i < preReqList.size(); ++i) {
             ss1 += preReqList.get(i);
             if (i + 1 < preReqList.size()) {
-                ss1 += ", ";
+                ss1 += " and ";
             }
         }
         mPreReqList.setText(ss1);

@@ -18,10 +18,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     private List<String> courseNames;
     private OnCardListener mOnCardListener;
 
-    public CustomAdapter(List<String> courseTitles, List<String> courseDescription, OnCardListener mOnCardListener) {
+    public CustomAdapter(List<String> courseTitles, List<String> courseNames, OnCardListener mOnCardListener) {
 
         this.courseTitles = courseTitles;
-        this.courseNames = courseDescription;
+        this.courseNames = courseNames;
         this.mOnCardListener = mOnCardListener;
     }
 
@@ -38,13 +38,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         holder.textView1.setText(courseTitles.get(position));
         holder.textView2.setText(courseNames.get(position));
-        //alternating pattern
-        if ((position - 1) % 4 == 0 || (position - 2) % 4 == 0) {
-                holder.cardView.setCardBackgroundColor(Color.parseColor("#093558"));
+//        if (position % 2 == 0) {
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#093558"));
             holder.textView1.setTextColor(Color.parseColor("#bba26a"));
             holder.textView1.setShadowLayer(1.6f, 1.5f, 1.3f, Color.parseColor("#ffffff"));
             holder.textView2.setTextColor(Color.parseColor("#bba26a"));
-        }
+//        }
     }
 
     @Override
